@@ -1,4 +1,31 @@
-// let db = {};
+let db = [{
+        nama: 'Bitcoin',
+        code: 'BTC',
+        konversi: 1.048
+    },
+    {
+        nama: 'Etherium',
+        code: 'ETH',
+        konversi: 55.000
+    },
+    {
+        nama: 'Pepe',
+        code: 'Pepe',
+        konversi: 0.0000048
+    },
+    {
+        nama: 'Avax',
+        code: 'AVX',
+        konversi: 20.000
+    },
+    {
+        nama: 'BlackCoq',
+        code: 'Bcoq',
+        konversi: 1.111
+    },
+];
+
+
 // let konversi = document.getElementById('konversi-btn')
 // document.getElementById('coin-btn').addEventListener('click', function() {
 //     document.getElementById('coin').value
