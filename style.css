@@ -56,11 +56,13 @@ body {
     }
     .form-title {
         margin-bottom: 20px;
+        margin-bottom: 20px;
         font-size: 24px;
         text-align: center;
     }
     .form-group {
         margin-bottom: 15px;
+        padding: 0.5rem;
     }
     .form-group label {
         display: block;
@@ -79,6 +81,7 @@ body {
         resize: vertical;
     }
     .form-button {
+        margin: 10px;
         padding: 10px;
         border: none;
         border-radius: 4px;
