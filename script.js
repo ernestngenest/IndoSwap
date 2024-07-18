@@ -156,6 +156,45 @@ function submitCoin(event) {
 function handleViewAll(event) {
     event.preventDefault();
     for (let i = 0; i < db.length; i++) {
-        newDiv
+
     }
+
+    const dbElement = document.createElement('div');
+    dbElement.id = 'db-element';
+    dbElement.className = 'list-coin'
+
+    for (let i = 0; i < db.length; i++) {
+        const item = db[i];
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('db-item');
+
+        const itemName = document.createElement('p');
+        itemName.textContent = item.nama + ' ';
+
+
+        const updateButton = document.createElement('button');
+        updateButton.textContent = 'Update ';
+        updateButton.addEventListener('click', () => {
+
+            alert(`Update item ${i}`);
+
+
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete ';
+        deleteButton.addEventListener('click', () => {
+
+            alert(`Delete item ${i}`);
+        });
+
+        itemContainer.appendChild(itemName);
+        itemContainer.appendChild(updateButton);
+        itemContainer.appendChild(deleteButton);
+
+        dbElement.appendChild(itemContainer);
+    }
+
+    document.getElementById('all-view').appendChild(dbElement);
+
 }
