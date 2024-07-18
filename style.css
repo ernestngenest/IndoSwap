@@ -91,10 +91,51 @@ body {
         color: #fff;
         font-size: 16px;
         cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 0 7px #999;
     }
     .form-button:hover {
         background-color: #218838;
     }
+    .form-button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: yellow;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn,
+.dropbtn:focus {
+    background-color: red;
+}
+
+.dynamic-button {
+    background-color: #f4511e;
+    border: none;
+    border-radius: 15px;
+    color: blue;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .card-img {

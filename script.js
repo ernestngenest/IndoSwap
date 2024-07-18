@@ -24,9 +24,6 @@ let db = [{
         konversi: 32432
     },
 ];
-let CoinStatus = '';
-
-
 
 
 // Sample data for the dropdown options
@@ -56,7 +53,7 @@ let selectedValue = '';
 
 dropdown.addEventListener('change', function() {
     selectedValue = this.value;
-    // console.log('Selected value:', selectedValue);
+
 });
 populateDropdown();
 
@@ -69,38 +66,29 @@ function selectedCoin(selectedValue, database) {
             break;
         }
     }
-    console.log(factor);
+    // console.log(factor);
     return factor;
 
 }
 
 
-// let factor = 14000;
+let factor = selectedCoin(selectedValue, db);
 
 const usd = document.getElementById("usd");
 const idr = document.getElementById("idr");
 
-function convertCurrency(inputField, targetField, conversionRate) {
-    inputField.addEventListener("input", function(ev) {
-        const value = ev.currentTarget.value;
-        if (conversionRate !== 0) {
-            const convertedValue = value * conversionRate;
-            targetField.value = convertedValue;
-        } else {
-            targetField.value = "Invalid conversion rate";
-        }
-    });
-}
-
-
-
 document.getElementById('swap-btn').addEventListener('click', function() {
-
-    let factor = selectedCoin(selectedValue, db);
-    console.log(factor);
-
-    const valueIDR = source * factor; // factor is the conversion rate
-    idr.value = valueIDR;
+    let crypto = document.getElementById('cryptoValue').value
+    let result = 0
+    console.log('crypto = ' + crypto);
+    for (let i = 0; i < db.length; i++) {
+        console.log(db[i].konversi + ' ' + db[i].nama);
+        if (selectedValue === db[i].nama) {
+            result = crypto * db[i].konversi
+        }
+    }
+    console.log(result);
+    document.getElementById('idr').value = result
 });
 
 
@@ -111,21 +99,18 @@ function handleAddCoin(event) {
     document.getElementById('all-view').style.display = 'none'
 }
 
-
-
-
 document.getElementById('backCoin').addEventListener('click', function() {
     document.getElementById('view-home').style.display = 'Contents'
     document.getElementById('menu-view').style.display = 'none'
     document.getElementById('all-view').style.display = 'none'
 })
 
-function handleAllCoin(event) {
-    event.preventDefault();
-    document.getElementById('view-home').style.display = 'none'
-    document.getElementById('menu-view').style.display = 'none'
-    document.getElementById('all-view').style.display = 'contents'
-}
+// function handleAllCoin(event) {
+//     event.preventDefault();
+//     document.getElementById('view-home').style.display = 'none'
+//     document.getElementById('menu-view').style.display = 'none'
+//     document.getElementById('all-view').style.display = 'contents'
+// }
 
 function handleBackCoinView(event) {
     event.preventDefault();
@@ -133,3 +118,9 @@ function handleBackCoinView(event) {
     document.getElementById('menu-view').style.display = 'none'
     document.getElementById('all-view').style.display = 'none'
 }
+
+document.getElementById('viewAll-btn').addEventListener('click', function() {
+    document.getElementById('view-home').style.display = 'none'
+    document.getElementById('menu-view').style.display = 'none'
+    document.getElementById('all-view').style.display = 'contents'
+});

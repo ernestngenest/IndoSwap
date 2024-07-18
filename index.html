@@ -25,13 +25,13 @@
                     <h2 class="form-title">INDO SWAP</h2>
                 </div>
                 <div class="form-group">
-                    <select id="dynamicDropdown">
+                    <select id="dynamicDropdown" style="background-color:dark blue" class="dynamic-button">
                         <option value="" >Select Coin</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <!-- <label for="name"> Coin </label> -->
-                    <input type="number" id="usd" name="name" required>
+                    <input type="number" id="cryptoValue" name="name" required>
                 </div>
                 <hr />
                 <div class="form-group">
@@ -45,7 +45,7 @@
                     <button id="addCoin-btn" onclick="handleAddCoin(event)" class="form-button">Add Coin</button>
                 </div>
                 <div>
-                    <button id="viewAll-btn" onclick="handleAllCoin(event)" class="form-button">View All Coin</button>
+                    <button id="viewAll-btn" class="form-button">View All Coin</button>
                 </div>
             </div>
             <div id="menu-view" style="display: none;">
