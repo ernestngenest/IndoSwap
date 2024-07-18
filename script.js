@@ -124,3 +124,38 @@ document.getElementById('viewAll-btn').addEventListener('click', function() {
     document.getElementById('menu-view').style.display = 'none'
     document.getElementById('all-view').style.display = 'contents'
 });
+
+// function addDropdown(temp) {
+//     const dropdown = document.getElementById('dynamicDropdown');
+//     dropdownData.push(temp)
+// }
+
+function submitCoin(event) {
+    event.preventDefault();
+    let nama = document.getElementById('coin-nama').value
+    let code = document.getElementById('coin-code').value
+    let price = document.getElementById('coin-price').value
+
+    let temp = {
+        nama,
+        code,
+        konversi: Number(price)
+    }
+
+    db.push(temp);
+    // addDropdown(temp);
+    let dropdown = document.getElementById('dynamicDropdown');
+    const optionElement = document.createElement('option');
+    optionElement.value = temp.nama;
+    optionElement.text = temp.nama;
+    dropdown.appendChild(optionElement);
+    // console.log(db);
+    alert('berhasil tambah data');
+}
+
+function handleViewAll(event) {
+    event.preventDefault();
+    for (let i = 0; i < db.length; i++) {
+        newDiv
+    }
+}

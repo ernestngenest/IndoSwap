@@ -25,7 +25,7 @@
                     <h2 class="form-title">INDO SWAP</h2>
                 </div>
                 <div class="form-group">
-                    <select id="dynamicDropdown" style="background-color:dark blue" class="dynamic-button">
+                    <select id="dynamicDropdown" style="background-color:whitesmoke" class="dynamic-button">
                         <option value="" >Select Coin</option>
                     </select>
                 </div>
@@ -54,25 +54,28 @@
                 </div>
                 <div class="form-group">
                     <label for="name" id="CoinName"> Nama Coin </label>
-                    <input type="text" id="Coin-nama" name="name" required>
+                    <input type="text" id="coin-nama" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Code Coin </label>
-                    <input type="text" id="Coin-code" name="name" required>
+                    <input type="text" id="coin-code" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="name"> Konversi ke Rupiah </label>
-                    <input type="number" id="Coin-price" name="name" required>
+                    <input type="number" id="coin-price" name="name" required>
                 </div>
                 <div>
-                    <button id="submitCoin" class="form-button" style="background-color:green;">submit</button>
+                    <button id="submitCoin" onclick="submitCoin(event)" class="form-button" style="background-color:green;">submit</button>
                 </div>
                 <div>
                     <button id="backCoin" class="form-button" style="background-color:brown;">back</button>
                 </div>
             </div>
             <div id="all-view" style="display: none;">
-                <div id="list-coin">test</div>
+
+                <div>
+                    <button id="coinViewAll" onclick="handleViewAll(event)" class="form-button" style="background-color:green;">View All</button>
+                </div>
                 <div>
                     <button id="backCoin-view" onclick="handleBackCoinView(event)" class="form-button" style="background-color:brown;">back</button>
                 </div>
