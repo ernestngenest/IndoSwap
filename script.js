@@ -123,6 +123,46 @@ document.getElementById('viewAll-btn').addEventListener('click', function() {
     document.getElementById('view-home').style.display = 'none'
     document.getElementById('menu-view').style.display = 'none'
     document.getElementById('all-view').style.display = 'contents'
+    const dbElement = document.createElement('div');
+    dbElement.id = 'db-element';
+    dbElement.className = 'list-coin'
+
+    for (let i = 0; i < db.length; i++) {
+        const item = db[i];
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('db-item');
+
+        const itemName = document.createElement('p');
+        itemName.textContent = item.nama + ' ';
+
+
+        const updateButton = document.createElement('button');
+        updateButton.textContent = 'Update ';
+        updateButton.addEventListener('click', () => {
+
+            alert(`Update item ${i}`);
+
+
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete ';
+        deleteButton.addEventListener('click', () => {
+            db.splice(i, 1);
+            dropdownData.splice(i, 1)
+            console.log(dropdownData);
+            alert('berhasil delete')
+        });
+
+        itemContainer.appendChild(itemName);
+        itemContainer.appendChild(updateButton);
+        itemContainer.appendChild(deleteButton);
+
+        dbElement.appendChild(itemContainer);
+    }
+
+    document.getElementById('all-view').appendChild(dbElement);
+
 });
 
 // function addDropdown(temp) {
@@ -159,42 +199,42 @@ function handleViewAll(event) {
 
     }
 
-    const dbElement = document.createElement('div');
-    dbElement.id = 'db-element';
-    dbElement.className = 'list-coin'
+    // const dbElement = document.createElement('div');
+    // dbElement.id = 'db-element';
+    // dbElement.className = 'list-coin'
 
-    for (let i = 0; i < db.length; i++) {
-        const item = db[i];
-        const itemContainer = document.createElement('div');
-        itemContainer.classList.add('db-item');
+    // for (let i = 0; i < db.length; i++) {
+    //     const item = db[i];
+    //     const itemContainer = document.createElement('div');
+    //     itemContainer.classList.add('db-item');
 
-        const itemName = document.createElement('p');
-        itemName.textContent = item.nama + ' ';
-
-
-        const updateButton = document.createElement('button');
-        updateButton.textContent = 'Update ';
-        updateButton.addEventListener('click', () => {
-
-            alert(`Update item ${i}`);
+    //     const itemName = document.createElement('p');
+    //     itemName.textContent = item.nama + ' ';
 
 
-        });
+    //     const updateButton = document.createElement('button');
+    //     updateButton.textContent = 'Update ';
+    //     updateButton.addEventListener('click', () => {
 
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete ';
-        deleteButton.addEventListener('click', () => {
+    //         alert(`Update item ${i}`);
 
-            alert(`Delete item ${i}`);
-        });
 
-        itemContainer.appendChild(itemName);
-        itemContainer.appendChild(updateButton);
-        itemContainer.appendChild(deleteButton);
+    //     });
 
-        dbElement.appendChild(itemContainer);
-    }
+    //     const deleteButton = document.createElement('button');
+    //     deleteButton.textContent = 'Delete ';
+    //     deleteButton.addEventListener('click', () => {
 
-    document.getElementById('all-view').appendChild(dbElement);
+    //         alert(`Delete item ${i}`);
+    //     });
+
+    //     itemContainer.appendChild(itemName);
+    //     itemContainer.appendChild(updateButton);
+    //     itemContainer.appendChild(deleteButton);
+
+    //     dbElement.appendChild(itemContainer);
+    // }
+
+    // document.getElementById('all-view').appendChild(dbElement);
 
 }

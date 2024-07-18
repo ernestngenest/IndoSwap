@@ -73,12 +73,35 @@
                 </div>
             </div>
             <div id="all-view" style="display: none;">
-
+                <!-- 
                 <div>
                     <button id="coinViewAll" onclick="handleViewAll(event)" class="form-button" style="background-color:green;">View All</button>
-                </div>
+                </div> -->
                 <div>
                     <button id="backCoin-view" onclick="handleBackCoinView(event)" class="form-button" style="background-color:brown;">back</button>
+                </div>
+            </div>
+            <div id="update-view" style="display: none;">
+                <div>
+                    <h2 class="form-title">Update Coin</h2>
+                </div>
+                <div class="form-group">
+                    <label for="name" id="CoinName"> Nama Coin </label>
+                    <input type="text" id="coin-nama" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Code Coin </label>
+                    <input type="text" id="coin-code" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name"> Konversi ke Rupiah </label>
+                    <input type="number" id="coin-price" name="name" required>
+                </div>
+                <div>
+                    <button id="submitCoin" onclick="submitCoin(event)" class="form-button" style="background-color:green;">submit</button>
+                </div>
+                <div>
+                    <button id="backCoin" class="form-button" style="background-color:brown;">back</button>
                 </div>
             </div>
         </div>
